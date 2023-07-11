@@ -3,8 +3,6 @@ import preact from '@preact/preset-vite'
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
-import alias from '@rollup/plugin-alias';
-import * as packageJson from './package.json'
 import { visualizer } from 'rollup-plugin-visualizer';
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -61,9 +59,6 @@ export default defineConfig({
         },
       },
     }
-
-
-    // minify: false,
   },
 
 })
