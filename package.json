@@ -1,0 +1,52 @@
+{
+  "name": "react-component-library",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "./dist/react-component-library.umd.cjs",
+  "module": "./dist/react-component-library.js",
+  "exports": {
+    ".": {
+      "require": "./dist/react-component-library.cjs",
+      "import": "./dist/react-component-library.es.js",
+      "requirejs": "./dist/react-component-library.umd.js",
+      "iife": "./dist/react-component-library.umd.js"
+    },
+    "./styles.css": {
+      "require": "./dist/styles.css",
+      "default": "./dist/styles.css"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && yarn run build:css",
+    "build:css": "tailwindcss -m -i ./src/tailwind-entry.css -o ./dist/styles.css",
+    "prepublishOnly": "yarn run build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/plugin-transform-react-jsx-development": "^7.22.5",
+    "babel-plugin-transform-hook-names": "^1.0.2",
+    "preact": "^10.16.0",
+    "preact-compat": "^3.19.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.22.5",
+    "@preact/preset-vite": "^2.5.0",
+    "@rollup/plugin-alias": "^5.0.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "postcss": "^8.4.25",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "packageManager": "yarn@3.6.1"
+}
