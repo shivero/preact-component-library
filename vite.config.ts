@@ -1,4 +1,4 @@
-import { PluginOption, defineConfig, esbuildVersion } from 'vite'
+import { PluginOption, defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
@@ -35,7 +35,7 @@ export default defineConfig({
     lib: {
       entry: resolve("src", "index.ts"),
       name: "reactcomponentlibrary",
-      formats: ["es", "cjs", "umd"],
+      formats: ["es", "cjs", "umd", "amd"],
       fileName: (format) => `reactcomponentlibrary.${format}.js`,
 
     },
