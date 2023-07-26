@@ -4,7 +4,6 @@ import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { visualizer } from 'rollup-plugin-visualizer';
-import tailwindcss from 'tailwindcss';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [preact({
@@ -32,19 +31,21 @@ export default defineConfig({
     jsxInject: `import { h, Fragment } from 'preact'`,
   },
 
+
   build: {
     lib: {
       entry: resolve("src", "index.ts"),
       name: "reactcomponentlibrary",
-      formats: ["es", "cjs", "umd"],
+      // formats: ["es", "cjs", "umd"],
+      formats: ["umd"],
       fileName: (format) => `reactcomponentlibrary.${format}.js`,
 
     },
     rollupOptions: {
       external: [
         'preact',
-        // 'preact/hooks',
-        // 'preact/compat',
+        'preact/hooks',
+        'preact/compat',
         // 'preact/debug',
       ],
 
@@ -53,8 +54,8 @@ export default defineConfig({
         // // Specify global variable names for external dependencies for UMD and SystemJS formats
         globals: {
           "preact": 'preact',
-          // "preact/hooks": 'preactHooks',
-          // "preact/compat": 'preactCompat',
+          "preact/hooks": 'preactHooks',
+          "preact/compat": 'preactCompat',
           // "preacr/debug": 'preactDebug',
 
         },
