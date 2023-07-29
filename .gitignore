@@ -94,8 +94,8 @@ typings/
 
 # dist output folder
 dist/
-.pnp.*
 
+.pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins

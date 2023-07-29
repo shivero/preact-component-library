@@ -1,9 +1,10 @@
-import { PluginOption, defineConfig, esbuildVersion } from 'vite'
+import { PluginOption, defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { visualizer } from 'rollup-plugin-visualizer';
+import tailwindcss from 'tailwindcss';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [preact({
@@ -35,7 +36,8 @@ export default defineConfig({
     lib: {
       entry: resolve("src", "index.ts"),
       name: "reactcomponentlibrary",
-      formats: ["es", "cjs", "umd"],
+      // formats: ["es", "cjs", "umd"],
+      formats: ["umd"],
       fileName: (format) => `reactcomponentlibrary.${format}.js`,
 
     },
@@ -44,7 +46,7 @@ export default defineConfig({
         'preact',
         'preact/hooks',
         'preact/compat',
-        'preact/debug',
+        // 'preact/debug',
       ],
 
 
@@ -54,7 +56,7 @@ export default defineConfig({
           "preact": 'preact',
           "preact/hooks": 'preactHooks',
           "preact/compat": 'preactCompat',
-          "preacr/debug": 'preactDebug',
+          // "preacr/debug": 'preactDebug',
 
         },
       },

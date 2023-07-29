@@ -3,4 +3,4 @@ import { Card } from "./components/Card";
 import { App } from './app';
 import Counter from './components/Counter';
 
-export default { Card, Counter };
+export default { Card };

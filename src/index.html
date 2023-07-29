@@ -7,12 +7,10 @@
     <title>Document</title>
     <script src="https://unpkg.com/preact@10.10.0/dist/preact.umd.js"></script>
     <script src="https://unpkg.com/preact@10.10.0/hooks/dist/hooks.umd.js"></script>
-    <script src="https://unpkg.com/preact@10.10.0/compat/dist/compat.umd.js"></script>
+    <!-- <script src="https://unpkg.com/preact@10.10.0/compat/dist/compat.umd.js"></script> -->
 
     <!-- <script src="../dist/reactcomponentlibrary.cjs.js"></script> -->
     <link rel="stylesheet" href="../dist/styles.css" />
-
-
 
 </head>
 
@@ -22,14 +20,13 @@
     <script src="../dist/reactcomponentlibrary.umd.js"></script>
 
     <script>
-        // Assuming the UMD module attaches itself to `window.reactcomponentlibrary`
         var myLibrary = window.reactcomponentlibrary;
 
         // Use the exported components or functionality
         console.log(myLibrary);
         // var cardInstance = myLibrary.Card({ title: "My Card", description: "This is my card" });
         // var appInstance = myLibrary.App({ name: "My App" });
-        var app = preact.h(myLibrary.Card, { title: "My Card", description: "This is my card" });
+        var app = preact.h(myLibrary.Card, { title: "Dbamy o Twoją prywatność", description: "This is my card" });
         preact.render(app, document.getElementById("app"));
         // preact.render(cardInstance, document.getElementById("app"));
     </script>
